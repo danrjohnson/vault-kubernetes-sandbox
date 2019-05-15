@@ -1,0 +1,6 @@
+*.swp
+root-token.txt
+unseal-key.txt
+
+*.csr
+*.pem
