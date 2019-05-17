@@ -1,3 +1,14 @@
+Prerequisites
+
+* Minikube
+* cfssl
+```
+try:
+brew install cfssl
+
+if that doesn't work, we can install it a different way...
+```
+
 To set everything up the first time, run the scripts in the following order
 ```
 ./gencerts
