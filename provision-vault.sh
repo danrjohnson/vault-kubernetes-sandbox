@@ -3,6 +3,10 @@
 # Requirements: Vault must be unsealed and logged into with the root token 
 set -exo pipefail
 
+echo "Setting up kubernetes service account"
+kubectl create serviceaccount vault-auth
+kubectl apply --filename vault-auth-service-account.yml
+
 echo "Writing read-only-policy.hcl"
 tee read-only-policy.hcl <<EOF
 path "secret/myapp/*" {
