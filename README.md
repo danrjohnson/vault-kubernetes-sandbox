@@ -42,5 +42,12 @@ Get the local vault url for poking around with it and setting it up initially (i
 kubectl port-forward $(kubectl get pods | grep vault | awk '{ print $1 }') 8200:8200
 ```
 
+You can also hit it through the minikube URL (this is how it's done in env.sh)
+```
+minikube service vault --url | gsed 's/http/https'
+```
 
-Most of this was taken from -> https://testdriven.io/blog/running-vault-and-consul-on-kubernetes/
+Most of this was taken from
+* https://testdriven.io/blog/running-vault-and-consul-on-kubernetes/
+* https://www.vaultproject.io/docs/auth/kubernetes/
+* https://learn.hashicorp.com/vault/identity-access-management/vault-agent-k8s
